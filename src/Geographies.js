@@ -21,7 +21,7 @@ class Geographies extends Component {
     request.open("GET", geographyUrl, true)
 
     request.onload = () => {
-      if (request.status >= 200 && request.status < 400) {
+      if ((request.status >= 200 && request.status < 400) || (request.status == 0 && request.responseText !== null)) {
         const geographyPaths = JSON.parse(request.responseText)
         this.setState({
           geographyPaths: feature(geographyPaths, geographyPaths.objects[Object.keys(geographyPaths.objects)[0]]).features,
