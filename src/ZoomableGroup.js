@@ -95,8 +95,8 @@ class ZoomableGroup extends Component {
   componentDidMount() {
     const { width, height, projection, zoom } = this.props
 
-    const resizeFactorX = calculateResizeFactor(this.zoomableGroupNode.parentElement.getBoundingClientRect().width, width)
-    const resizeFactorY = calculateResizeFactor(this.zoomableGroupNode.parentElement.getBoundingClientRect().height, height)
+    const resizeFactorX = 1
+    const resizeFactorY = 1
 
     this.setState({
       resizeFactorX: resizeFactorX,
